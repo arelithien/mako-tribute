@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+      height: 100vh;
+      background:url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0da7ebb-926a-4a3a-bfaa-5c64ef01ac3c/d358gd1-7267863b-f59e-46e7-9422-1a65db050fcc.jpg/v1/fill/w_900,h_506,q_75,strp/leaves_from_the_vine_by_lionheart539-d358gd1.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9jMGRhN2ViYi05MjZhLTRhM2EtYmZhYS01YzY0ZWYwMWFjM2MvZDM1OGdkMS03MjY3ODYzYi1mNTllLTQ2ZTctOTQyMi0xYTY1ZGIwNTBmY2MuanBnIiwid2lkdGgiOiI8PTkwMCIsImhlaWdodCI6Ijw9NTA2In1dXX0.qNHvZ1t45DrD6dVnVaNuhOckUMp_bhbhP8BFihZiQPg") 100% / cover no-repeat;
+      background-color:black;
+      font-family: Brush Script MT,cursive;
+      font-size:30px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.842);
+    }
+/* in honor of mako title */
+.memory-title {
+    font-family: Brush Script MT,cursive;
+    font-size:30px;
+}
+
+.song {
+    text-align: center;
+    display: grid;
+    color: rgba(255, 255, 255, 0.842);
+    font-size: 20px;
+}
+/* frame around mako */
+.frame {
+    width: 300px;
+    height: 250px;
+    border: 3px  #00000000;
+    background: #eeeeee;
+    margin: auto;
+    padding: 1px 1px;
+}
+
+/* size of image */
+img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgba(252, 168, 12, 0.37);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    font-size: 20px;
+  }
+  
+  .year {
+    font-size: 30px;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 4px solid #ff9f55da;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.377);
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid rgba(255, 255, 255, 0.377);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgba(255, 255, 255, 0.377);
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.26);
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+
